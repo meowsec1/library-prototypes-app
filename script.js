@@ -27,20 +27,20 @@ function displayBooks(books) {
         bookCard.classList.add("book-card");
 
         const bookTitle = document.createElement("p");
-        bookTitle.innerHTML = book.title;
+        bookTitle.textContent = book.title;
 
         const bookAuthor = document.createElement("p");
-        bookAuthor.innerHTML = book.author;
+        bookAuthor.textContent = book.author;
 
         const bookPages = document.createElement("p");
-        bookPages.innerHTML = book.pages;
+        bookPages.textContent = book.pages;
 
         const bookRead = document.createElement("p");
         if (book.read) {
-            bookRead.innerHTML = 'Finished reading!';
+            bookRead.textContent = 'Finished reading!';
         }
         else {
-            bookRead.innerHTML = 'Not yet read!';
+            bookRead.textContent = 'Not yet read!';
         }
 
 
@@ -60,14 +60,14 @@ function displayBooks(books) {
             for (let i = 0; i < myLibrary.length; i++) {
                 if (myLibrary[i].id == book.id) {
                     myLibrary.splice(i, 1);
-                    displayBooks(myLibrary);
+                    bookCard.remove();
                 }
             }
         })
 
         readBtn.addEventListener("click", function(){
             book.read = !book.read;
-            displayBooks(myLibrary);
+            bookCard.querySelector("p:nth-of-type(4)").textContent = book.read ? 'Finished reading!' : 'Not yet read!';
         })
 
         bookContainer.appendChild(bookCard);
@@ -95,6 +95,7 @@ addBookForm.addEventListener("submit", function(event) {
 
     addBookToLibrary(title, author, pages, finishedReading);
     displayBooks(myLibrary);
+    addBookForm.reset();
 });
 
 
