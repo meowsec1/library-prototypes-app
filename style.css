@@ -14,6 +14,7 @@ body {
 
 .book-container {
     display: flex; 
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -44,7 +45,11 @@ form {
     background-color: #F97A00;
     padding: 20px;
     border-radius: 20px;
+    display: grid;
+    justify-items: center;
+
 }
+
 
 .hide {
     display: none;
@@ -52,4 +57,5 @@ form {
 
 svg {
     width: 1.5rem;
+    fill: white;
 }

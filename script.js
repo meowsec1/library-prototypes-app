@@ -59,15 +59,15 @@ function displayBooks(books) {
         removeBtn.addEventListener("click", function(){
             for (let i = 0; i < myLibrary.length; i++) {
                 if (myLibrary[i].id == book.id) {
-                    myLibrary.splice(i)
-                    displayBooks(myLibrary)
+                    myLibrary.splice(i, 1);
+                    displayBooks(myLibrary);
                 }
             }
         })
 
         readBtn.addEventListener("click", function(){
             book.read = !book.read;
-            displayBooks(myLibrary)
+            displayBooks(myLibrary);
         })
 
         bookContainer.appendChild(bookCard);
