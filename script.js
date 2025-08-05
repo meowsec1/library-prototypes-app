@@ -14,13 +14,13 @@ Book.prototype.info = function() {
 }
 
 function addBookToLibrary(title, author, pages, read=false) {
-  // take params, create a book then store it in the array
     const book = new Book(title, author, pages, read);
     myLibrary.push(book);
 }
 
 function displayBooks(books) {
     const bookContainer = document.querySelector(".book-container");
+    bookContainer.innerHTML = '';
 
     for (const book of books) {
         const bookCard = document.createElement("div");
@@ -51,8 +51,32 @@ function displayBooks(books) {
         bookContainer.appendChild(bookCard);
     }
 
-
 }
+
+
+const newBookBtn = document.querySelector(".new-book");
+const addBookForm = document.querySelector("form");
+
+newBookBtn.addEventListener("click", function(){
+    newBookBtn.classList.add("hide");
+    addBookForm.classList.remove("hide");
+})
+
+addBookForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    newBookBtn.classList.remove("hide");
+    addBookForm.classList.add("hide");
+
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const finishedReading = document.querySelector('input[name="finished-reading"]:checked')?.value === "true";
+
+    addBookToLibrary(title, author, pages, finishedReading);
+    displayBooks(myLibrary);
+});
+
+
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, false);
 addBookToLibrary("Blindness", "Some guy", 111, false);

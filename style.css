@@ -1,9 +1,10 @@
 * {
     margin: 5px;
     padding: 0;
+    font-family: sans-serif;
+    border: none;
     color: white;
 }
-
 
 .book-container {
     display: flex; 
@@ -13,20 +14,32 @@
 }
 
 .book-card {
-    background-color: rgb(43, 124, 190);
+    background-color: #F97A00;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 4px 4px 3px rgb(100, 30, 230);
-}
-
-p {
-    font-family: sans-serif;
-    color: white;
+    box-shadow: 4px 4px 3px #386641;
 }
 
 button {
     border: none;
-    background-color: green;
-    padding: 10px;
+    background-color: #386641;
+    padding: 10px 20px;
     border-radius: 20px;
+}
+
+input {
+    color: black;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+form {
+    width: max-content;
+    background-color: #F97A00;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.hide {
+    display: none;
 }

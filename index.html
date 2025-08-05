@@ -8,7 +8,41 @@
 </head>
 <body>
     <div class="book-container"></div>
-    <!-- <button>Add Book</button> -->
+    <button class="new-book">New Book</button>
+
+    <form class="hide">
+        <div>
+            <label for="title">Book Title</label>
+            <input id="title" name="title" type="text" required>
+        </div>
+
+        <div>
+            <label for="author">Book Author</label>
+            <input id="author" name="author" type="text" required>
+        </div>
+
+        <div>
+            <label for="pages">Book Pages</label>
+            <input id="pages" name="pages" type="number" min="0" max="2000" required>
+        </div>
+
+        <fieldset>
+            <legend>Have you finished reading this book?</legend>
+
+            <div>
+            <input id="finished-reading-yes" name="finished-reading" type="radio" value="true">
+            <label for="finished-reading-yes">Yes</label>
+            </div>
+
+            <div>
+            <input id="finished-reading-no" name="finished-reading" type="radio" value="false">
+            <label for="finished-reading-no">No</label>
+            </div>
+        </fieldset>
+
+        <button class="add-book" type="submit">Add Book</button>
+    </form>
+
     <script src="script.js"></script>
 </body>
 </html>
