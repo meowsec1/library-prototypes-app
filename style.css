@@ -1,3 +1,32 @@
+* {
+    margin: 5px;
+    padding: 0;
+    color: white;
+}
+
+
+.book-container {
+    display: flex; 
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    background-color: rgb(43, 124, 190);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 3px rgb(100, 30, 230);
+}
+
 p {
-    color: red;
+    font-family: sans-serif;
+    color: white;
+}
+
+button {
+    border: none;
+    background-color: green;
+    padding: 10px;
+    border-radius: 20px;
 }
