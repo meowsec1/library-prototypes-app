@@ -43,3 +43,7 @@ form {
 .hide {
     display: none;
 }
+
+svg {
+    width: 1.5rem;
+}
